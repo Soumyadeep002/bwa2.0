@@ -20,13 +20,32 @@ function AdminDashboard() {
       return
     }
 
-    // Load existing data from localStorage
-    const savedImages = localStorage.getItem('galleryImages')
-    const savedNews = localStorage.getItem('newsItems')
-    
-    if (savedImages) {
-      setGalleryImages(JSON.parse(savedImages))
+    // Load gallery images from JSON file
+    const loadGalleryFromJSON = async () => {
+      try {
+        const response = await fetch('/gallery.json')
+        if (response.ok) {
+          const jsonImages = await response.json()
+          if (Array.isArray(jsonImages)) {
+            setGalleryImages(jsonImages)
+            // Also sync to localStorage for temporary storage during editing
+            localStorage.setItem('galleryImages', JSON.stringify(jsonImages))
+          }
+        }
+      } catch (error) {
+        console.error('Error loading gallery from JSON:', error)
+        // Fallback to localStorage if JSON doesn't exist
+        const savedImages = localStorage.getItem('galleryImages')
+        if (savedImages) {
+          setGalleryImages(JSON.parse(savedImages))
+        }
+      }
     }
+
+    loadGalleryFromJSON()
+
+    // Load news from localStorage (news is still stored in localStorage)
+    const savedNews = localStorage.getItem('newsItems')
     if (savedNews) {
       setNewsItems(JSON.parse(savedNews))
     }
@@ -69,6 +88,7 @@ function AdminDashboard() {
         }
         const updatedImages = [newImage, ...galleryImages]
         setGalleryImages(updatedImages)
+        // Save to localStorage temporarily (will be exported to JSON)
         localStorage.setItem('galleryImages', JSON.stringify(updatedImages))
         setNewImageFile(null)
         setNewImagePreview(null)
@@ -106,7 +126,61 @@ function AdminDashboard() {
     if (window.confirm('Are you sure you want to delete this image?')) {
       const updatedImages = galleryImages.filter(img => img.id !== id)
       setGalleryImages(updatedImages)
+      // Save to localStorage temporarily (will be exported to JSON)
       localStorage.setItem('galleryImages', JSON.stringify(updatedImages))
+    }
+  }
+
+  const handleExportGallery = () => {
+    if (galleryImages.length === 0) {
+      alert('No images to export. Please add images first.')
+      return
+    }
+    
+    const dataStr = JSON.stringify(galleryImages, null, 2)
+    const dataBlob = new Blob([dataStr], { type: 'application/json' })
+    const url = URL.createObjectURL(dataBlob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'gallery.json'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+    
+    const instructions = `Gallery exported successfully!\n\n` +
+      `To update the gallery on all devices:\n` +
+      `1. Copy the downloaded gallery.json file\n` +
+      `2. Replace public/gallery.json with the downloaded file\n` +
+      `3. Or run: node scripts/sync-gallery.js <path-to-downloaded-file>\n\n` +
+      `Total images exported: ${galleryImages.length}`
+    alert(instructions)
+  }
+
+  const handleImportGallery = (e) => {
+    const file = e.target.files[0]
+    if (file && file.type === 'application/json') {
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        try {
+          const importedImages = JSON.parse(event.target.result)
+          if (Array.isArray(importedImages)) {
+            setGalleryImages(importedImages)
+            // Save to localStorage temporarily
+            localStorage.setItem('galleryImages', JSON.stringify(importedImages))
+            alert('Gallery data imported successfully! Remember to export and replace public/gallery.json to update on all devices.')
+          } else {
+            alert('Invalid JSON format. Expected an array of images.')
+          }
+        } catch (error) {
+          alert('Error parsing JSON file: ' + error.message)
+        }
+      }
+      reader.readAsText(file)
+      // Reset file input
+      e.target.value = ''
+    } else {
+      alert('Please select a valid JSON file')
     }
   }
 
@@ -221,7 +295,29 @@ function AdminDashboard() {
             </div>
 
             <div className="bg-white rounded-lg shadow p-6">
-              <h2 className="text-xl font-bold mb-4">Gallery Images ({galleryImages.length})</h2>
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Gallery Images ({galleryImages.length})</h2>
+                <div className="flex gap-2">
+                  <label className="px-4 py-2 bg-green-600 text-white rounded-md cursor-pointer hover:bg-green-700">
+                    Import JSON
+                    <input
+                      type="file"
+                      accept=".json"
+                      onChange={handleImportGallery}
+                      className="hidden"
+                    />
+                  </label>
+                  <button
+                    onClick={handleExportGallery}
+                    className="px-4 py-2 text-white rounded-md"
+                    style={{ backgroundColor: '#017cc2' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = '#015a94'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = '#017cc2'}
+                  >
+                    Export JSON
+                  </button>
+                </div>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {galleryImages.map((image) => (
                   <div key={image.id} className="border rounded-lg overflow-hidden">

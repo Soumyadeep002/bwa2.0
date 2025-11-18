@@ -1,19 +1,21 @@
 import HeroBanner from '../components/HeroBanner'
+import BWAFounder from '../components/BWAFounder'
 import WushuEvents from '../components/WushuEvents'
 import WushuTeam from '../components/WushuTeam'
-import OfficialNews from '../components/OfficialNews'
+import OurAchievement from '../components/OurAchievement'
 import WushuSports from '../components/WushuSports'
-import Sponsors from '../components/Sponsors'
+import Affiliation from '../components/Affiliation'
 
 function Home() {
   return (
     <>
       <HeroBanner />
+      <BWAFounder />
       <WushuEvents />
       <WushuTeam />
-      <OfficialNews />
+      <OurAchievement />
       <WushuSports />
-      <Sponsors />
+      <Affiliation />
     </>
   )
 }

@@ -9,7 +9,7 @@ function RulesRegulations() {
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Competition Rules</h2>
             <p className="text-gray-700 mb-4">
               All competitions organized by Bihar Wushu Association follow the official rules and regulations 
-              set by the Wushu Federation of India and International Wushu Federation.
+              set by the Wushu Association of India and International Wushu Federation.
             </p>
             
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Athlete Eligibility</h2>

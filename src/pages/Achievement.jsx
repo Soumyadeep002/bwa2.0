@@ -6,19 +6,19 @@ function Achievement() {
       achievements: [
         {
           id: 1,
-          event: 'Bihar State Wushu Championship 2024',
+          name: 'Bihar State Wushu Championship 2024',
+          medal: '3 Gold, 2 Silver, 1 Bronze',
+          event: 'Patna, Bihar - July 2024',
           category: 'Senior',
-          medals: '3 Gold, 2 Silver, 1 Bronze',
-          location: 'Patna, Bihar',
-          date: 'July 2024'
+          image: 'https://via.placeholder.com/200x250?text=Event+1'
         },
         {
           id: 2,
-          event: 'Sub-Junior National Championship',
+          name: 'Sub-Junior National Championship',
+          medal: '2 Gold, 3 Silver, 2 Bronze',
+          event: 'Chandigarh - June 2024',
           category: 'Sub-Junior',
-          medals: '2 Gold, 3 Silver, 2 Bronze',
-          location: 'Chandigarh',
-          date: 'June 2024'
+          image: 'https://via.placeholder.com/200x250?text=Event+2'
         }
       ]
     },
@@ -27,27 +27,27 @@ function Achievement() {
       achievements: [
         {
           id: 3,
-          event: '16th World Wushu Championship',
+          name: '16th World Wushu Championship',
+          medal: '1 Silver, 2 Bronze',
+          event: 'International - November 2023',
           category: 'International',
-          medals: '1 Silver, 2 Bronze',
-          location: 'International',
-          date: 'November 2023'
+          image: 'https://via.placeholder.com/200x250?text=Event+3'
         },
         {
           id: 4,
-          event: 'Wushu Stars Championship',
+          name: 'Wushu Stars Championship',
+          medal: '17 Medals',
+          event: 'Moscow, Russia - September 2023',
           category: 'International',
-          medals: '17 Medals',
-          location: 'Moscow, Russia',
-          date: 'September 2023'
+          image: 'https://via.placeholder.com/200x250?text=Event+4'
         },
         {
           id: 5,
-          event: 'National Championships',
+          name: 'National Championships',
+          medal: '5 Gold, 4 Silver, 3 Bronze',
+          event: 'Delhi - August 2023',
           category: 'Senior',
-          medals: '5 Gold, 4 Silver, 3 Bronze',
-          location: 'Delhi',
-          date: 'August 2023'
+          image: 'https://via.placeholder.com/200x250?text=Event+5'
         }
       ]
     },
@@ -56,19 +56,19 @@ function Achievement() {
       achievements: [
         {
           id: 6,
-          event: 'Asian Games Qualifiers',
+          name: 'Asian Games Qualifiers',
+          medal: '2 Gold, 1 Silver',
+          event: 'Bangkok, Thailand - May 2022',
           category: 'Senior',
-          medals: '2 Gold, 1 Silver',
-          location: 'Bangkok, Thailand',
-          date: 'May 2022'
+          image: 'https://via.placeholder.com/200x250?text=Event+6'
         },
         {
           id: 7,
-          event: 'Junior National Championship',
+          name: 'Junior National Championship',
+          medal: '3 Gold, 2 Silver, 4 Bronze',
+          event: 'Mumbai - March 2022',
           category: 'Junior',
-          medals: '3 Gold, 2 Silver, 4 Bronze',
-          location: 'Mumbai',
-          date: 'March 2022'
+          image: 'https://via.placeholder.com/200x250?text=Event+7'
         }
       ]
     },
@@ -77,11 +77,11 @@ function Achievement() {
       achievements: [
         {
           id: 8,
-          event: 'National Wushu Championship',
+          name: 'National Wushu Championship',
+          medal: '4 Gold, 3 Silver, 2 Bronze',
+          event: 'Kolkata - December 2021',
           category: 'Senior',
-          medals: '4 Gold, 3 Silver, 2 Bronze',
-          location: 'Kolkata',
-          date: 'December 2021'
+          image: 'https://via.placeholder.com/200x250?text=Event+8'
         }
       ]
     },
@@ -90,49 +90,85 @@ function Achievement() {
       achievements: [
         {
           id: 9,
-          event: 'Asian Games 2018',
+          name: 'Asian Games 2018',
+          medal: 'Multiple Medals',
+          event: 'Jakarta Palembang - August 2018',
           category: 'International',
-          medals: 'Multiple Medals',
-          location: 'Jakarta Palembang',
-          date: 'August 2018'
+          image: 'https://via.placeholder.com/200x250?text=Event+9'
         }
       ]
     }
   ]
+
+  // Indian Flag SVG Icon
+  const IndianFlagIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" className="mb-1">
+      <rect width="24" height="8" fill="#FF9933" />
+      <rect y="8" width="24" height="8" fill="#FFFFFF" />
+      <rect y="16" width="24" height="8" fill="#138808" />
+      <circle cx="12" cy="12" r="3" fill="#000080" />
+      <circle cx="12" cy="12" r="2" fill="#FFFFFF" />
+    </svg>
+  )
+
+  // Helper function to determine medal color
+  const getMedalColor = (medal) => {
+    if (medal.toLowerCase().includes('gold')) return '#FFD700'
+    if (medal.toLowerCase().includes('silver')) return '#C0C0C0'
+    if (medal.toLowerCase().includes('bronze')) return '#CD7F32'
+    return '#017cc2' // Default color for multiple medals
+  }
 
   return (
     <div className="py-12 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Achievements</h1>
         
-        <div className="space-y-8">
+        <div className="space-y-12">
           {achievementsByYear.map((yearData) => (
-            <div key={yearData.year} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div key={yearData.year}>
               {/* Year Header */}
-              <div className="text-white px-6 py-4" style={{ backgroundColor: '#017cc2' }}>
+              <div className="text-white px-6 py-4 mb-6 rounded-t-lg" style={{ backgroundColor: '#017cc2' }}>
                 <h2 className="text-2xl font-bold">{yearData.year}</h2>
               </div>
               
-              {/* Achievements Table */}
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">S.No</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Event</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Category</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Medals</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Location</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {yearData.achievements.map((achievement, index) => (
-                      <tr key={achievement.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{index + 1}</td>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{achievement.event}</td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+              {/* Achievements Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                {yearData.achievements.map((achievement) => (
+                  <div
+                    key={achievement.id}
+                    className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200"
+                  >
+                    {/* Image Section */}
+                    <div className="flex-shrink-0 w-full sm:w-40 h-56 sm:h-auto">
+                      <div className="w-full h-full p-2">
+                        <img
+                          src={achievement.image}
+                          alt={achievement.name}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Text Section */}
+                    <div className="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+                      <div className="mb-3">
+                        <div className="mb-1">
+                          <IndianFlagIcon />
+                        </div>
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900">{achievement.name}</h3>
+                      </div>
+                      
+                      <div className="space-y-1 text-gray-700">
+                        <p 
+                          className="font-semibold text-sm sm:text-base" 
+                          style={{ color: getMedalColor(achievement.medal) }}
+                        >
+                          {achievement.medal}
+                        </p>
+                        <p className="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">{achievement.event}</p>
+                        <span 
+                          className={`inline-block mt-2 px-2 py-1 text-xs font-semibold rounded-full ${
                             achievement.category === 'International' 
                               ? 'bg-purple-100 text-purple-800'
                               : achievement.category === 'Senior'
@@ -141,17 +177,14 @@ function Achievement() {
                               ? 'bg-green-100 text-green-800'
                               : 'bg-yellow-100 text-yellow-800'
                           }`}
-                          style={achievement.category === 'Senior' ? { backgroundColor: '#017cc2' } : {}}>
-                            {achievement.category}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-700 font-semibold">{achievement.medals}</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">{achievement.location}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{achievement.date}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                          style={achievement.category === 'Senior' ? { backgroundColor: '#017cc2' } : {}}
+                        >
+                          {achievement.category}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

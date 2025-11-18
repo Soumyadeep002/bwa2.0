@@ -7,10 +7,8 @@ import Events from './pages/Events'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Achievement from './pages/Achievement'
-import GovernmentCompliance from './pages/GovernmentCompliance'
 import AntiDoping from './pages/AntiDoping'
 import RulesRegulations from './pages/RulesRegulations'
-import Results from './pages/Results'
 import Layout from './components/Layout'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
@@ -24,13 +22,11 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="district-units" element={<DistrictUnits />} />
           <Route path="members" element={<Members />} />
-          <Route path="government-compliance" element={<GovernmentCompliance />} />
           <Route path="achievement" element={<Achievement />} />
           <Route path="anti-doping" element={<AntiDoping />} />
           <Route path="events" element={<Events />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="rules-regulations" element={<RulesRegulations />} />
-          <Route path="results" element={<Results />} />
           <Route path="contact" element={<Contact />} />
         </Route>
         <Route path="admin" element={<AdminLogin />} />

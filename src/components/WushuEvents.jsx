@@ -1,7 +1,32 @@
 import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 function WushuEvents() {
   const [activeTab, setActiveTab] = useState('national')
+
+  // Sample event images - replace with actual images
+  const nationalEvents = [
+    { id: 1, image: 'https://via.placeholder.com/400x300?text=National+Event+1' },
+    { id: 2, image: 'https://via.placeholder.com/400x300?text=National+Event+2' },
+    { id: 3, image: 'https://via.placeholder.com/400x300?text=National+Event+3' },
+    { id: 4, image: 'https://via.placeholder.com/400x300?text=National+Event+4' },
+    { id: 5, image: 'https://via.placeholder.com/400x300?text=National+Event+5' },
+    { id: 6, image: 'https://via.placeholder.com/400x300?text=National+Event+6' }
+  ]
+
+  const stateEvents = [
+    { id: 1, image: 'https://via.placeholder.com/400x300?text=State+Event+1' },
+    { id: 2, image: 'https://via.placeholder.com/400x300?text=State+Event+2' },
+    { id: 3, image: 'https://via.placeholder.com/400x300?text=State+Event+3' },
+    { id: 4, image: 'https://via.placeholder.com/400x300?text=State+Event+4' },
+    { id: 5, image: 'https://via.placeholder.com/400x300?text=State+Event+5' },
+    { id: 6, image: 'https://via.placeholder.com/400x300?text=State+Event+6' }
+  ]
+
+  const currentEvents = activeTab === 'national' ? nationalEvents : stateEvents
 
   return (
     <section className="py-12 bg-white">
@@ -21,27 +46,88 @@ function WushuEvents() {
             National
           </button>
           <button
-            onClick={() => setActiveTab('international')}
+            onClick={() => setActiveTab('state')}
             className={`px-8 py-2 font-semibold ${
-              activeTab === 'international'
+              activeTab === 'state'
                 ? 'text-white'
                 : 'bg-gray-200 text-gray-700'
             }`}
-            style={activeTab === 'international' ? { backgroundColor: '#017cc2' } : {}}
+            style={activeTab === 'state' ? { backgroundColor: '#017cc2' } : {}}
           >
-            International
+            State
           </button>
         </div>
 
-        {/* Event Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-200 h-64 flex items-center justify-center">
-            <span className="text-gray-500">Event Image 1</span>
-          </div>
-          <div className="bg-gray-200 h-64 flex items-center justify-center">
-            <span className="text-gray-500">Event Image 2</span>
-          </div>
+        {/* Event Images Slider */}
+        <div className="relative">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={2}
+            navigation={true}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+            }}
+            className="wushu-events-swiper"
+          >
+            {currentEvents.map((event) => (
+              <SwiperSlide key={event.id}>
+                <div className="bg-gray-200 h-64 rounded-lg overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={`${activeTab === 'national' ? 'National' : 'State'} Event ${event.id}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+
+        {/* Custom Swiper Navigation Styles */}
+        <style>{`
+          .wushu-events-swiper .swiper-button-next,
+          .wushu-events-swiper .swiper-button-prev {
+            color: #017cc2;
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          }
+          .wushu-events-swiper .swiper-button-next:after,
+          .wushu-events-swiper .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .wushu-events-swiper .swiper-button-next:hover,
+          .wushu-events-swiper .swiper-button-prev:hover {
+            background-color: #017cc2;
+            color: white;
+          }
+          @media (max-width: 640px) {
+            .wushu-events-swiper .swiper-button-next,
+            .wushu-events-swiper .swiper-button-prev {
+              width: 30px;
+              height: 30px;
+            }
+            .wushu-events-swiper .swiper-button-next:after,
+            .wushu-events-swiper .swiper-button-prev:after {
+              font-size: 14px;
+            }
+          }
+        `}</style>
       </div>
     </section>
   )

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/imgs/logo.png'
 import saiLogo from '../assets/imgs/sai.png'
-import fistLogo from '../assets/imgs/f2.png'
 import myasLogo from '../assets/imgs/myas.png'
 import indOlympicLogo from '../assets/imgs/ind-olympic.png'
 import iwfLogo from '../assets/imgs/iwf.png'
+import waiLogo from '../assets/imgs/affilation/wai.png'
+
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -58,11 +59,11 @@ function Header() {
                 />
               </div>
               
-              {/* Red Fist Logo */}
+              {/* Wushu Association of India Logo */}
               <div className="flex flex-col items-center">
                 <img 
-                  src={fistLogo} 
-                  alt="Wushu Federation Logo" 
+                  src={waiLogo} 
+                  alt="Wushu Association of India Logo" 
                   className="w-16 h-16 object-contain rounded"
                 />
               </div>
@@ -146,21 +147,11 @@ function Header() {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-opacity-10"
                       onClick={() => setAboutDropdownOpen(false)}
                     >
-                      Members
+                      Committee Members
                     </NavLink>
                   </div>
                 )}
               </div>
-              <NavLink
-                to="/government-compliance"
-                className={({ isActive }) =>
-                  `text-sm font-medium pb-1 ${
-                    isActive ? 'border-b-2 border-white' : 'hover:text-blue-100'
-                  }`
-                }
-              >
-                Government Compliance
-              </NavLink>
               <NavLink
                 to="/achievement"
                 className={({ isActive }) =>
@@ -210,16 +201,6 @@ function Header() {
                 }
               >
                 Rules & Regulations
-              </NavLink>
-              <NavLink
-                to="/results"
-                className={({ isActive }) =>
-                  `text-sm font-medium pb-1 ${
-                    isActive ? 'border-b-2 border-white' : 'hover:text-blue-100'
-                  }`
-                }
-              >
-                Result
               </NavLink>
               <NavLink
                 to="/contact"
@@ -394,30 +375,6 @@ function Header() {
                 )}
               </div>
               <NavLink
-                to="/government-compliance"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `px-6 py-3 text-gray-700 border-l-4 ${
-                    isActive ? 'border-[#017cc2]' : 'border-transparent'
-                  }`
-                }
-                style={({ isActive }) => isActive ? { backgroundColor: 'rgba(1, 124, 194, 0.1)', color: '#017cc2' } : {}}
-                onMouseEnter={(e) => {
-                  if (!e.currentTarget.classList.contains('active')) {
-                    e.currentTarget.style.backgroundColor = 'rgba(1, 124, 194, 0.05)'
-                    e.currentTarget.style.color = '#017cc2'
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!e.currentTarget.classList.contains('active')) {
-                    e.currentTarget.style.backgroundColor = ''
-                    e.currentTarget.style.color = ''
-                  }
-                }}
-              >
-                Government Compliance
-              </NavLink>
-              <NavLink
                 to="/achievement"
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
@@ -538,30 +495,6 @@ function Header() {
                 Rules & Regulations
               </NavLink>
               <NavLink
-                to="/results"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `px-6 py-3 text-gray-700 border-l-4 ${
-                    isActive ? 'border-[#017cc2]' : 'border-transparent'
-                  }`
-                }
-                style={({ isActive }) => isActive ? { backgroundColor: 'rgba(1, 124, 194, 0.1)', color: '#017cc2' } : {}}
-                onMouseEnter={(e) => {
-                  if (!e.currentTarget.classList.contains('active')) {
-                    e.currentTarget.style.backgroundColor = 'rgba(1, 124, 194, 0.05)'
-                    e.currentTarget.style.color = '#017cc2'
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!e.currentTarget.classList.contains('active')) {
-                    e.currentTarget.style.backgroundColor = ''
-                    e.currentTarget.style.color = ''
-                  }
-                }}
-              >
-                Result
-              </NavLink>
-              <NavLink
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
@@ -597,8 +530,8 @@ function Header() {
                   className="w-8 h-8 object-contain"
                 />
                 <img 
-                  src={fistLogo} 
-                  alt="Wushu Federation Logo" 
+                  src={waiLogo} 
+                  alt="Wushu Association of India Logo" 
                   className="w-8 h-8 object-contain"
                 />
                 <img 

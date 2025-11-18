@@ -18,8 +18,8 @@ function Footer() {
             <h3 className="text-lg font-bold mb-4">EVENTS</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/events" className="text-blue-200 hover:text-white">National Events</Link></li>
-              <li><Link to="/events" className="text-blue-200 hover:text-white">International Events</Link></li>
-              <li><Link to="/events" className="text-blue-200 hover:text-white">State Championships</Link></li>
+              <li><Link to="/events" className="text-blue-200 hover:text-white">State Events</Link></li>
+              <li><Link to="/events" className="text-blue-200 hover:text-white">District Events</Link></li>
             </ul>
           </div>
 
@@ -30,7 +30,6 @@ function Footer() {
               <li><Link to="/about" className="text-blue-200 hover:text-white">About Us</Link></li>
               <li><Link to="/achievement" className="text-blue-200 hover:text-white">Achievements</Link></li>
               <li><Link to="/gallery" className="text-blue-200 hover:text-white">Gallery</Link></li>
-              <li><Link to="/results" className="text-blue-200 hover:text-white">Results</Link></li>
               <li><Link to="/contact" className="text-blue-200 hover:text-white">Contact Us</Link></li>
             </ul>
           </div>
@@ -40,8 +39,8 @@ function Footer() {
             <h3 className="text-lg font-bold mb-4">CONTACT</h3>
             <ul className="space-y-2 text-sm text-blue-200">
               <li>Patna, Bihar, India</li>
-              <li>info@biharwushu.org</li>
-              <li>+91 XXX XXX XXXX</li>
+              <li>info@biharwushu.in</li>
+              <li>+91 7462872460</li>
             </ul>
             
             {/* Social Media */}
