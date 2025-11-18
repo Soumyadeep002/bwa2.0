@@ -9,21 +9,21 @@ function WushuEvents() {
 
   // Sample event images - replace with actual images
   const nationalEvents = [
-    { id: 1, image: 'https://via.placeholder.com/400x300?text=National+Event+1' },
-    { id: 2, image: 'https://via.placeholder.com/400x300?text=National+Event+2' },
-    { id: 3, image: 'https://via.placeholder.com/400x300?text=National+Event+3' },
-    { id: 4, image: 'https://via.placeholder.com/400x300?text=National+Event+4' },
-    { id: 5, image: 'https://via.placeholder.com/400x300?text=National+Event+5' },
-    { id: 6, image: 'https://via.placeholder.com/400x300?text=National+Event+6' }
+    { id: 1, image: 'https://via.placeholder.com/800x450?text=National+Event+1' },
+    { id: 2, image: 'https://via.placeholder.com/800x450?text=National+Event+2' },
+    { id: 3, image: 'https://via.placeholder.com/800x450?text=National+Event+3' },
+    { id: 4, image: 'https://via.placeholder.com/800x450?text=National+Event+4' },
+    { id: 5, image: 'https://via.placeholder.com/800x450?text=National+Event+5' },
+    { id: 6, image: 'https://via.placeholder.com/800x450?text=National+Event+6' }
   ]
 
   const stateEvents = [
-    { id: 1, image: 'https://via.placeholder.com/400x300?text=State+Event+1' },
-    { id: 2, image: 'https://via.placeholder.com/400x300?text=State+Event+2' },
-    { id: 3, image: 'https://via.placeholder.com/400x300?text=State+Event+3' },
-    { id: 4, image: 'https://via.placeholder.com/400x300?text=State+Event+4' },
-    { id: 5, image: 'https://via.placeholder.com/400x300?text=State+Event+5' },
-    { id: 6, image: 'https://via.placeholder.com/400x300?text=State+Event+6' }
+    { id: 1, image: 'https://via.placeholder.com/800x450?text=State+Event+1' },
+    { id: 2, image: 'https://via.placeholder.com/800x450?text=State+Event+2' },
+    { id: 3, image: 'https://via.placeholder.com/800x450?text=State+Event+3' },
+    { id: 4, image: 'https://via.placeholder.com/800x450?text=State+Event+4' },
+    { id: 5, image: 'https://via.placeholder.com/800x450?text=State+Event+5' },
+    { id: 6, image: 'https://via.placeholder.com/800x450?text=State+Event+6' }
   ]
 
   const currentEvents = activeTab === 'national' ? nationalEvents : stateEvents
@@ -63,18 +63,10 @@ function WushuEvents() {
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
-            slidesPerView={2}
+            slidesPerView={1}
             navigation={true}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
               768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
                 slidesPerView: 2,
                 spaceBetween: 30,
               },
@@ -83,7 +75,7 @@ function WushuEvents() {
           >
             {currentEvents.map((event) => (
               <SwiperSlide key={event.id}>
-                <div className="bg-gray-200 h-64 rounded-lg overflow-hidden">
+                <div className="bg-gray-200 rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   <img
                     src={event.image}
                     alt={`${activeTab === 'national' ? 'National' : 'State'} Event ${event.id}`}

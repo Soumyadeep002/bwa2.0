@@ -27,7 +27,7 @@ function HeroBanner() {
   ]
 
   return (
-    <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+    <div className="relative w-full h-screen">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
@@ -64,7 +64,7 @@ function HeroBanner() {
       </Swiper>
       
       {/* Wavy Separator */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
+      <div className="absolute bottom-[-30px] md:bottom-[-35px] lg:bottom-[-45px] xl:bottom-0 left-0 right-0 z-20">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-24 md:h-32">
           <path d="M0,60 Q360,20 720,60 T1440,60 L1440,120 L0,120 Z" fill="#017cc2" />
         </svg>

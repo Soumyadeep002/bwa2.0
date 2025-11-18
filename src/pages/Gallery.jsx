@@ -101,14 +101,6 @@ function Gallery() {
     <div className="py-12 bg-gray-50 min-h-screen" onKeyDown={handleKeyDown} tabIndex={0}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Gallery</h1>
-        
-        {/* Filter Buttons */}
-        <div className="flex justify-center space-x-4 mb-8">
-          <button className="px-6 py-2 text-white rounded-lg font-semibold" style={{ backgroundColor: '#017cc2' }}>All</button>
-          <button className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Competitions</button>
-          <button className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Training</button>
-          <button className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300">Awards</button>
-        </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap: '5px' }}>
