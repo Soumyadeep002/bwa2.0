@@ -27,7 +27,7 @@ function HeroBanner() {
   ]
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full aspect-video">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
