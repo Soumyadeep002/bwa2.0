@@ -12,6 +12,8 @@ import AntiDoping from './pages/AntiDoping'
 import RulesRegulations from './pages/RulesRegulations'
 import Results from './pages/Results'
 import Layout from './components/Layout'
+import AdminLogin from './pages/AdminLogin'
+import AdminDashboard from './pages/AdminDashboard'
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="results" element={<Results />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+        <Route path="admin" element={<AdminLogin />} />
+        <Route path="admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   )

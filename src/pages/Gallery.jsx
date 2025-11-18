@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [galleryItems, setGalleryItems] = useState([])
 
-  // Sample gallery items - replace with actual images
-  const galleryItems = Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    title: `Gallery Image ${i + 1}`,
-    category: i % 3 === 0 ? 'Competitions' : i % 3 === 1 ? 'Training' : 'Awards',
-    image: `https://via.placeholder.com/800x450?text=Image+${i + 1}`
-  }))
+  useEffect(() => {
+    // Load images from localStorage (posted by admin)
+    const savedImages = localStorage.getItem('galleryImages')
+    if (savedImages) {
+      setGalleryItems(JSON.parse(savedImages))
+    } else {
+      // Default sample images if no admin images exist
+      const defaultImages = Array.from({ length: 20 }, (_, i) => ({
+        id: i + 1,
+        title: `Gallery Image ${i + 1}`,
+        category: i % 3 === 0 ? 'Competitions' : i % 3 === 1 ? 'Training' : 'Awards',
+        image: `https://via.placeholder.com/800x450?text=Image+${i + 1}`
+      }))
+      setGalleryItems(defaultImages)
+    }
+  }, [])
 
   const openImage = (index) => {
     setCurrentIndex(index)
