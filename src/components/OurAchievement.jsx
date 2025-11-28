@@ -1,3 +1,11 @@
+import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
+import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
+import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
+import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
+import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
+import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
+
+
 function OurAchievement() {
   // Placeholder data - images will be provided later
   const achievements = [
@@ -7,42 +15,48 @@ function OurAchievement() {
       medal: "Gold medalist",
       additionalMedal: "Bronze medalist",
       event: "Batumi international Wushu Championship Georgia",
-      image: "https://via.placeholder.com/200x250?text=Athlete+1"
+      image: apraajeetamishra,
+      isInternational: true
     },
     {
       id: 2,
-      name: "Isha Mishra",
-      medal: "Bronze medalist",
-      event: "37th national games, Goa 2023",
-      image: "https://via.placeholder.com/200x250?text=Athlete+2"
+      name: "Rahul Kumar",
+      medal: "Silver medalist",
+      event: "Batumi international Wushu Championship Georgia",
+      image: rahulkumar,
+      isInternational: true
     },
     {
       id: 3,
       name: "Diksha kumari",
       medal: "Gold medalist",
       event: "Batumi international Wushu Championship Georgia",
-      image: "https://via.placeholder.com/200x250?text=Athlete+3"
+      image: dikshakumari,
+      isInternational: true
     },
     {
       id: 4,
-      name: "Aashish Kumar",
+      name: "Isha Mishra",
       medal: "Bronze medalist",
       event: "37th national games, Goa 2023",
-      image: "https://via.placeholder.com/200x250?text=Athlete+4"
+      image: ishamishra,
+      isInternational: false
     },
     {
       id: 5,
-      name: "Rahul Kumar",
-      medal: "Silver medalist",
-      event: "Batumi international Wushu Championship Georgia",
-      image: "https://via.placeholder.com/200x250?text=Athlete+5"
+      name: "Aashish Kumar",
+      medal: "Bronze medalist",
+      event: "37th national games, Goa 2023",
+      image: aashihskumars,
+      isInternational: false
     },
     {
       id: 6,
       name: "Shubham Kumar",
       medal: "Silver medalist",
       event: "38th national games, uttrakhand 2025",
-      image: "https://via.placeholder.com/200x250?text=Athlete+6"
+      image: subhamkumar,
+      isInternational: false
     }
   ]
 
@@ -82,9 +96,11 @@ function OurAchievement() {
               {/* Text Section */}
               <div className="flex-1 p-4 sm:p-6 flex flex-col justify-center">
                 <div className="mb-3">
-                  <div className="mb-1">
-                    <IndianFlagIcon />
-                  </div>
+                  {achievement.isInternational && (
+                    <div className="mb-1">
+                      <IndianFlagIcon />
+                    </div>
+                  )}
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900">{achievement.name}</h3>
                 </div>
                 

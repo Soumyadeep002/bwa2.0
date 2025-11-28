@@ -1,67 +1,94 @@
 import { useState } from 'react'
+// Achievement images
+import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
+import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
+import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
+import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
+import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
+import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
+// Event images
+import nationalEvent1 from '../assets/imgs/events/national/d8ixeuopdjlhkilridw1.webp'
+import nationalEvent2 from '../assets/imgs/events/national/tkdtmmqfemvqmwlgztnx.webp'
+// Team images
+import seniorTeamPhoto from '../assets/imgs/team/senior.jpg'
+import juniorTeamPhoto from '../assets/imgs/team/junior.jpg'
+import subJuniorTeamPhoto from '../assets/imgs/team/sub-junior.jpg'
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   
-  // Gallery images - add your image paths here
+  // Gallery images
   const galleryItems = [
+    // Achievements
     {
       id: 1,
-      title: 'Gallery Image 1',
-      category: 'Competitions',
-      image: 'https://via.placeholder.com/800x450?text=Image+1'
+      title: 'Aprajeeta Mishra - Gold & Bronze Medalist',
+      category: 'Achievements',
+      image: apraajeetamishra
     },
     {
       id: 2,
-      title: 'Gallery Image 2',
-      category: 'Training',
-      image: 'https://via.placeholder.com/800x450?text=Image+2'
+      title: 'Diksha Kumari - Gold Medalist',
+      category: 'Achievements',
+      image: dikshakumari
     },
     {
       id: 3,
-      title: 'Gallery Image 3',
-      category: 'Awards',
-      image: 'https://via.placeholder.com/800x450?text=Image+3'
+      title: 'Rahul Kumar - Silver Medalist',
+      category: 'Achievements',
+      image: rahulkumar
     },
     {
       id: 4,
-      title: 'Gallery Image 4',
-      category: 'Competitions',
-      image: 'https://via.placeholder.com/800x450?text=Image+4'
+      title: 'Isha Mishra - Bronze Medalist',
+      category: 'Achievements',
+      image: ishamishra
     },
     {
       id: 5,
-      title: 'Gallery Image 5',
-      category: 'Training',
-      image: 'https://via.placeholder.com/800x450?text=Image+5'
+      title: 'Aashish Kumar - Bronze Medalist',
+      category: 'Achievements',
+      image: aashihskumars
     },
     {
       id: 6,
-      title: 'Gallery Image 6',
-      category: 'Awards',
-      image: 'https://via.placeholder.com/800x450?text=Image+6'
+      title: 'Shubham Kumar - Silver Medalist',
+      category: 'Achievements',
+      image: subhamkumar
     },
+    // Events
     {
       id: 7,
-      title: 'Gallery Image 7',
-      category: 'Competitions',
-      image: 'https://via.placeholder.com/800x450?text=Image+7'
+      title: 'National Event 1',
+      category: 'Events',
+      image: nationalEvent1
     },
     {
       id: 8,
-      title: 'Gallery Image 8',
-      category: 'Training',
-      image: 'https://via.placeholder.com/800x450?text=Image+8'
+      title: 'National Event 2',
+      category: 'Events',
+      image: nationalEvent2
+    },
+    // Team Photos
+    {
+      id: 9,
+      title: 'Senior Team',
+      category: 'Team',
+      image: seniorTeamPhoto
+    },
+    {
+      id: 10,
+      title: 'Junior Team',
+      category: 'Team',
+      image: juniorTeamPhoto
+    },
+    {
+      id: 11,
+      title: 'Sub-Junior Team',
+      category: 'Team',
+      image: subJuniorTeamPhoto
     }
-    // Add more images here with their paths
-    // Example:
-    // {
-    //   id: 9,
-    //   title: 'Event Photo',
-    //   category: 'Competitions',
-    //   image: '/images/gallery/event1.jpg'
-    // }
   ]
 
   const openImage = (index) => {

@@ -3,18 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
+import nationalEvent1 from '../assets/imgs/events/national/d8ixeuopdjlhkilridw1.webp'
+import nationalEvent2 from '../assets/imgs/events/national/tkdtmmqfemvqmwlgztnx.webp'
 
 function WushuEvents() {
   const [activeTab, setActiveTab] = useState('national')
 
-  // Sample event images - replace with actual images
+  // National event images
   const nationalEvents = [
-    { id: 1, image: 'https://via.placeholder.com/800x450?text=National+Event+1' },
-    { id: 2, image: 'https://via.placeholder.com/800x450?text=National+Event+2' },
-    { id: 3, image: 'https://via.placeholder.com/800x450?text=National+Event+3' },
-    { id: 4, image: 'https://via.placeholder.com/800x450?text=National+Event+4' },
-    { id: 5, image: 'https://via.placeholder.com/800x450?text=National+Event+5' },
-    { id: 6, image: 'https://via.placeholder.com/800x450?text=National+Event+6' }
+    { id: 1, image: nationalEvent1 },
+    { id: 2, image: nationalEvent2 }
   ]
 
   const stateEvents = [

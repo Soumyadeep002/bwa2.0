@@ -1,24 +1,61 @@
+import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
+import apraajeetamishra2025 from '../assets/imgs/achivements/aprajeeta_mishra_2025.jpg'
+import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
+import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
+import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
+import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
+import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
+
 function Achievement() {
-  // Sample data organized by year - replace with actual data
+  // Achievements data organized by year
   const achievementsByYear = [
+    {
+      year: 2025,
+      achievements: [
+        {
+          id: 1,
+          name: 'Shubham Kumar',
+          medal: 'Silver medalist',
+          event: '38th national games, Uttrakhand 2025',
+          category: 'Senior',
+          image: subhamkumar
+        },
+        {
+          id: 2,
+          name: 'Aprajeeta Mishra',
+          medal: 'Silver medalist',
+          event: '38th national games, Uttrakhand 2025',
+          category: 'Senior',
+          image: apraajeetamishra2025
+        }
+      ]
+    },
     {
       year: 2024,
       achievements: [
         {
-          id: 1,
-          name: 'Bihar State Wushu Championship 2024',
-          medal: '3 Gold, 2 Silver, 1 Bronze',
-          event: 'Patna, Bihar - July 2024',
-          category: 'Senior',
-          image: 'https://via.placeholder.com/200x250?text=Event+1'
+          id: 3,
+          name: 'Aprajeeta Mishra',
+          medal: 'Gold & Bronze medalist',
+          event: 'Batumi International Wushu Championship, Georgia',
+          category: 'International',
+          image: apraajeetamishra
         },
         {
-          id: 2,
-          name: 'Sub-Junior National Championship',
-          medal: '2 Gold, 3 Silver, 2 Bronze',
-          event: 'Chandigarh - June 2024',
-          category: 'Sub-Junior',
-          image: 'https://via.placeholder.com/200x250?text=Event+2'
+          id: 4,
+          name: 'Diksha Kumari',
+          medal: 'Gold medalist',
+          event: 'Batumi International Wushu Championship, Georgia',
+          category: 'International',
+          image: dikshakumari
+        },
+        {
+          id: 5,
+          name: 'Rahul Kumar',
+          medal: 'Silver medalist',
+          event: 'Batumi International Wushu Championship, Georgia',
+          category: 'International',
+          image: rahulkumar
         }
       ]
     },
@@ -26,76 +63,21 @@ function Achievement() {
       year: 2023,
       achievements: [
         {
-          id: 3,
-          name: '16th World Wushu Championship',
-          medal: '1 Silver, 2 Bronze',
-          event: 'International - November 2023',
-          category: 'International',
-          image: 'https://via.placeholder.com/200x250?text=Event+3'
-        },
-        {
-          id: 4,
-          name: 'Wushu Stars Championship',
-          medal: '17 Medals',
-          event: 'Moscow, Russia - September 2023',
-          category: 'International',
-          image: 'https://via.placeholder.com/200x250?text=Event+4'
-        },
-        {
-          id: 5,
-          name: 'National Championships',
-          medal: '5 Gold, 4 Silver, 3 Bronze',
-          event: 'Delhi - August 2023',
-          category: 'Senior',
-          image: 'https://via.placeholder.com/200x250?text=Event+5'
-        }
-      ]
-    },
-    {
-      year: 2022,
-      achievements: [
-        {
           id: 6,
-          name: 'Asian Games Qualifiers',
-          medal: '2 Gold, 1 Silver',
-          event: 'Bangkok, Thailand - May 2022',
+          name: 'Isha Mishra',
+          medal: 'Bronze medalist',
+          event: '37th National Games, Goa 2023',
           category: 'Senior',
-          image: 'https://via.placeholder.com/200x250?text=Event+6'
+          image: ishamishra
         },
         {
           id: 7,
-          name: 'Junior National Championship',
-          medal: '3 Gold, 2 Silver, 4 Bronze',
-          event: 'Mumbai - March 2022',
-          category: 'Junior',
-          image: 'https://via.placeholder.com/200x250?text=Event+7'
-        }
-      ]
-    },
-    {
-      year: 2021,
-      achievements: [
-        {
-          id: 8,
-          name: 'National Wushu Championship',
-          medal: '4 Gold, 3 Silver, 2 Bronze',
-          event: 'Kolkata - December 2021',
+          name: 'Aashish Kumar',
+          medal: 'Bronze medalist',
+          event: '37th National Games, Goa 2023',
           category: 'Senior',
-          image: 'https://via.placeholder.com/200x250?text=Event+8'
-        }
-      ]
-    },
-    {
-      year: 2018,
-      achievements: [
-        {
-          id: 9,
-          name: 'Asian Games 2018',
-          medal: 'Multiple Medals',
-          event: 'Jakarta Palembang - August 2018',
-          category: 'International',
-          image: 'https://via.placeholder.com/200x250?text=Event+9'
-        }
+          image: aashihskumars
+        },
       ]
     }
   ]
@@ -153,9 +135,11 @@ function Achievement() {
                     {/* Text Section */}
                     <div className="flex-1 p-4 sm:p-6 flex flex-col justify-center">
                       <div className="mb-3">
-                        <div className="mb-1">
-                          <IndianFlagIcon />
-                        </div>
+                        {achievement.category === 'International' && (
+                          <div className="mb-1">
+                            <IndianFlagIcon />
+                          </div>
+                        )}
                         <h3 className="text-lg sm:text-xl font-bold text-gray-900">{achievement.name}</h3>
                       </div>
                       

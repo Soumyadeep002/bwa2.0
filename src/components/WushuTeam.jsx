@@ -1,7 +1,17 @@
 import { useState } from 'react'
+import seniorTeamPhoto from '../assets/imgs/team/senior.jpg'
+import juniorTeamPhoto from '../assets/imgs/team/junior.jpg'
+import subJuniorTeamPhoto from '../assets/imgs/team/sub-junior.jpg'
 
 function WushuTeam() {
   const [activeTab, setActiveTab] = useState('sub-junior')
+
+  // Team photos mapping
+  const teamPhotos = {
+    'sub-junior': subJuniorTeamPhoto,
+    'junior': juniorTeamPhoto,
+    'senior': seniorTeamPhoto
+  }
 
   return (
     <section className="py-12 bg-white">
@@ -45,8 +55,16 @@ function WushuTeam() {
         </div>
 
         {/* Team Image */}
-        <div className="bg-gray-200 h-96 flex items-center justify-center">
-          <span className="text-gray-500 text-lg">Team Photo</span>
+        <div className="bg-gray-200 border-2 border-gray-300 flex items-center justify-center rounded-lg overflow-hidden">
+          {teamPhotos[activeTab] ? (
+            <img
+              src={teamPhotos[activeTab]}
+              alt={`${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Team Photo`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-gray-500 text-lg">Team Photo Coming Soon</span>
+          )}
         </div>
       </div>
     </section>
