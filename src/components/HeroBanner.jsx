@@ -3,26 +3,23 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import banner1 from '../assets/imgs/banner/1.webp'
+import banner2 from '../assets/imgs/banner/2.webp'
+import banner3 from '../assets/imgs/banner/3.webp'
 
 function HeroBanner() {
   const slides = [
     {
       id: 1,
-      title: "World Cup Qualifying Event 2024",
-      subtitle: "Bihar Wushu Association",
-      gradient: "from-blue-200 via-blue-100 to-purple-100"
+      image: banner1
     },
     {
       id: 2,
-      title: "National Championship 2024",
-      subtitle: "Join us for the annual championship",
-      gradient: "from-blue-200 via-blue-100 to-purple-100"
+      image: banner2
     },
     {
       id: 3,
-      title: "International Competition",
-      subtitle: "Represent Bihar on the world stage",
-      gradient: "from-blue-200 via-blue-100 to-purple-100"
+      image: banner3
     }
   ]
 
@@ -43,21 +40,12 @@ function HeroBanner() {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className={`relative w-full h-full bg-gradient-to-r ${slide.gradient} flex items-center justify-center`}>
-              {/* Background Image Placeholder */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="w-full h-full bg-gray-400"></div>
-              </div>
-              
-              {/* Content */}
-              <div className="relative z-10 text-center px-4">
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white drop-shadow-2xl mb-4">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-3xl lg:text-4xl text-white drop-shadow-lg">
-                  {slide.subtitle}
-                </p>
-              </div>
+            <div className="relative w-full h-full">
+              <img
+                src={slide.image}
+                alt={`Banner ${slide.id}`}
+                className="w-full h-full object-cover"
+              />
             </div>
           </SwiperSlide>
         ))}
