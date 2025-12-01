@@ -31,7 +31,11 @@ function Contact() {
                 </div>
                 <div className="ml-4">
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">info@biharwushu.org</p>
+                  <p className="text-gray-600">
+                    <a href="mailto:info@biharwushu.in" className="hover:text-[#017cc2] transition-colors">
+                      info@biharwushu.in
+                    </a>
+                  </p>
                 </div>
               </div>
               
@@ -43,7 +47,11 @@ function Contact() {
                 </div>
                 <div className="ml-4">
                   <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">+91 XXX XXX XXXX</p>
+                  <p className="text-gray-600">
+                    <a href="tel:+917462872460" className="hover:text-[#017cc2] transition-colors">
+                      +91 7462872460
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

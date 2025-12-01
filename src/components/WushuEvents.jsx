@@ -5,6 +5,9 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import nationalEvent1 from '../assets/imgs/events/national/d8ixeuopdjlhkilridw1.webp'
 import nationalEvent2 from '../assets/imgs/events/national/tkdtmmqfemvqmwlgztnx.webp'
+import stateEvent1 from '../assets/imgs/events/state/state1.jpg'
+import stateEvent2 from '../assets/imgs/events/state/state2.jpg'
+import stateEvent3 from '../assets/imgs/events/state/state3.jpg'
 
 function WushuEvents() {
   const [activeTab, setActiveTab] = useState('national')
@@ -15,13 +18,11 @@ function WushuEvents() {
     { id: 2, image: nationalEvent2 }
   ]
 
+  // State event images
   const stateEvents = [
-    { id: 1, image: 'https://via.placeholder.com/800x450?text=State+Event+1' },
-    { id: 2, image: 'https://via.placeholder.com/800x450?text=State+Event+2' },
-    { id: 3, image: 'https://via.placeholder.com/800x450?text=State+Event+3' },
-    { id: 4, image: 'https://via.placeholder.com/800x450?text=State+Event+4' },
-    { id: 5, image: 'https://via.placeholder.com/800x450?text=State+Event+5' },
-    { id: 6, image: 'https://via.placeholder.com/800x450?text=State+Event+6' }
+    { id: 1, image: stateEvent1 },
+    { id: 2, image: stateEvent2 },
+    { id: 3, image: stateEvent3 }
   ]
 
   const currentEvents = activeTab === 'national' ? nationalEvents : stateEvents

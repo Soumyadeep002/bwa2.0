@@ -1,18 +1,31 @@
 import { useState } from 'react'
 // Achievement images
 import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
+import apraajeetamishra2025 from '../assets/imgs/achivements/aprajeeta_mishra_2025.jpg'
 import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
 import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
 import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
+import ishamishra2025 from '../assets/imgs/achivements/isha_misra_2025.jpg'
 import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
 import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
-// Event images
+// Event images - National
 import nationalEvent1 from '../assets/imgs/events/national/d8ixeuopdjlhkilridw1.webp'
 import nationalEvent2 from '../assets/imgs/events/national/tkdtmmqfemvqmwlgztnx.webp'
-// Team images
-import seniorTeamPhoto from '../assets/imgs/team/senior.jpg'
-import juniorTeamPhoto from '../assets/imgs/team/junior.jpg'
-import subJuniorTeamPhoto from '../assets/imgs/team/sub-junior.jpg'
+// Event images - State
+import stateEvent1 from '../assets/imgs/events/state/state1.jpg'
+import stateEvent2 from '../assets/imgs/events/state/state2.jpg'
+import stateEvent3 from '../assets/imgs/events/state/state3.jpg'
+// Team images - Senior
+import seniorTeamPhoto1 from '../assets/imgs/team/senior.jpg'
+import seniorTeamPhoto2 from '../assets/imgs/team/senior2.jpg'
+import seniorTeamPhoto3 from '../assets/imgs/team/senior3.jpg'
+// Team images - Junior
+import juniorTeamPhoto1 from '../assets/imgs/team/junior.jpg'
+import juniorTeamPhoto2 from '../assets/imgs/team/junior2.jpg'
+// Team images - Sub-Junior
+import subJuniorTeamPhoto1 from '../assets/imgs/team/sub-junior.jpg'
+import subJuniorTeamPhoto2 from '../assets/imgs/team/sub-junior2.jpg'
+import subJuniorTeamPhoto3 from '../assets/imgs/team/sub-junior3.jpg'
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -29,65 +42,128 @@ function Gallery() {
     },
     {
       id: 2,
+      title: 'Aprajeeta Mishra - 2025',
+      category: 'Achievements',
+      image: apraajeetamishra2025
+    },
+    {
+      id: 3,
       title: 'Diksha Kumari - Gold Medalist',
       category: 'Achievements',
       image: dikshakumari
     },
     {
-      id: 3,
+      id: 4,
       title: 'Rahul Kumar - Silver Medalist',
       category: 'Achievements',
       image: rahulkumar
     },
     {
-      id: 4,
+      id: 5,
       title: 'Isha Mishra - Bronze Medalist',
       category: 'Achievements',
       image: ishamishra
     },
     {
-      id: 5,
+      id: 6,
+      title: 'Isha Mishra - 2025',
+      category: 'Achievements',
+      image: ishamishra2025
+    },
+    {
+      id: 7,
       title: 'Aashish Kumar - Bronze Medalist',
       category: 'Achievements',
       image: aashihskumars
     },
     {
-      id: 6,
+      id: 8,
       title: 'Shubham Kumar - Silver Medalist',
       category: 'Achievements',
       image: subhamkumar
     },
-    // Events
+    // Events - National
     {
-      id: 7,
+      id: 9,
       title: 'National Event 1',
       category: 'Events',
       image: nationalEvent1
     },
     {
-      id: 8,
+      id: 10,
       title: 'National Event 2',
       category: 'Events',
       image: nationalEvent2
     },
-    // Team Photos
-    {
-      id: 9,
-      title: 'Senior Team',
-      category: 'Team',
-      image: seniorTeamPhoto
-    },
-    {
-      id: 10,
-      title: 'Junior Team',
-      category: 'Team',
-      image: juniorTeamPhoto
-    },
+    // Events - State
     {
       id: 11,
-      title: 'Sub-Junior Team',
+      title: 'State Event 1',
+      category: 'Events',
+      image: stateEvent1
+    },
+    {
+      id: 12,
+      title: 'State Event 2',
+      category: 'Events',
+      image: stateEvent2
+    },
+    {
+      id: 13,
+      title: 'State Event 3',
+      category: 'Events',
+      image: stateEvent3
+    },
+    // Team Photos - Senior
+    {
+      id: 14,
+      title: 'Senior Team 1',
       category: 'Team',
-      image: subJuniorTeamPhoto
+      image: seniorTeamPhoto1
+    },
+    {
+      id: 15,
+      title: 'Senior Team 2',
+      category: 'Team',
+      image: seniorTeamPhoto2
+    },
+    {
+      id: 16,
+      title: 'Senior Team 3',
+      category: 'Team',
+      image: seniorTeamPhoto3
+    },
+    // Team Photos - Junior
+    {
+      id: 17,
+      title: 'Junior Team 1',
+      category: 'Team',
+      image: juniorTeamPhoto1
+    },
+    {
+      id: 18,
+      title: 'Junior Team 2',
+      category: 'Team',
+      image: juniorTeamPhoto2
+    },
+    // Team Photos - Sub-Junior
+    {
+      id: 19,
+      title: 'Sub-Junior Team 1',
+      category: 'Team',
+      image: subJuniorTeamPhoto1
+    },
+    {
+      id: 20,
+      title: 'Sub-Junior Team 2',
+      category: 'Team',
+      image: subJuniorTeamPhoto2
+    },
+    {
+      id: 21,
+      title: 'Sub-Junior Team 3',
+      category: 'Team',
+      image: subJuniorTeamPhoto3
     }
   ]
 

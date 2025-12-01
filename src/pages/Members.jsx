@@ -1,14 +1,23 @@
 function Members() {
-  // Sample data - replace with actual data
   const members = [
-    { id: 1, name: 'Rajesh Kumar', designation: 'President', district: 'Patna', email: 'rajesh@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2020-01-15' },
-    { id: 2, name: 'Priya Sharma', designation: 'Vice President', district: 'Gaya', email: 'priya@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2020-02-20' },
-    { id: 3, name: 'Amit Singh', designation: 'Secretary', district: 'Bhagalpur', email: 'amit@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2020-03-10' },
-    { id: 4, name: 'Sunita Devi', designation: 'Treasurer', district: 'Muzaffarpur', email: 'sunita@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2020-04-05' },
-    { id: 5, name: 'Vikash Kumar', designation: 'Member', district: 'Darbhanga', email: 'vikash@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2021-01-12' },
-    { id: 6, name: 'Anjali Kumari', designation: 'Member', district: 'Purnia', email: 'anjali@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2021-02-18' },
-    { id: 7, name: 'Ramesh Yadav', designation: 'Member', district: 'Patna', email: 'ramesh@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2021-03-22' },
-    { id: 8, name: 'Kavita Singh', designation: 'Member', district: 'Gaya', email: 'kavita@biharwushu.org', phone: '+91 XXX XXX XXXX', joinDate: '2021-04-30' },
+    { 
+      id: 1, 
+      name: 'Dr. Amulya Kumar Singh', 
+      designation: 'President', 
+      district: 'Bihar Wushu Association', 
+      email: '', 
+      phone: '9431461050, 9113152954', 
+      joinDate: '' 
+    },
+    { 
+      id: 2, 
+      name: 'Ms. Suman Mishra', 
+      designation: 'General Secretary', 
+      district: 'Bihar Wushu Association', 
+      email: '', 
+      phone: '7462872460', 
+      joinDate: '' 
+    },
   ]
 
   return (
@@ -37,9 +46,31 @@ function Members() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{member.name}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{member.designation}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{member.district}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{member.email}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{member.phone}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{member.joinDate}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                      {member.email ? (
+                        <a href={`mailto:${member.email}`} className="text-[#017cc2] hover:underline">
+                          {member.email}
+                        </a>
+                      ) : '-'}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-700">
+                      {member.phone ? (
+                        <div className="flex flex-col gap-1">
+                          {member.phone.split(', ').map((phone, idx) => (
+                            <a 
+                              key={idx}
+                              href={`tel:+91${phone.trim()}`} 
+                              className="text-[#017cc2] hover:underline"
+                            >
+                              +91 {phone.trim()}
+                            </a>
+                          ))}
+                        </div>
+                      ) : '-'}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                      {member.joinDate || '-'}
+                    </td>
                   </tr>
                 ))}
               </tbody>

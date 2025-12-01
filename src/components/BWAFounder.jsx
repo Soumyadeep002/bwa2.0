@@ -4,13 +4,13 @@ function BWAFounder() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12">
           {/* Left Section - Portrait */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
             <img
               src={founderImage}
               alt="Guru Dinesh Mishra"
-              className="w-auto h-auto max-w-xs md:max-w-md"
+              className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-xs lg:max-w-sm h-auto object-contain"
             />
           </div>
 

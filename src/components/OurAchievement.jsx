@@ -1,7 +1,7 @@
 import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
 import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
 import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
-import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
+import ishaamishra2025 from '../assets/imgs/achivements/isha_misra_2025.jpg'
 import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
 import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
 
@@ -36,11 +36,11 @@ function OurAchievement() {
     },
     {
       id: 4,
-      name: "Isha Mishra",
-      medal: "Bronze medalist",
-      event: "37th national games, Goa 2023",
-      image: ishamishra,
-      isInternational: false
+      name: 'Isha Mishra',
+      medal: 'Bronze medalist',
+      event: '10th World Kungfu Championship, China 2025',
+      isInternational: true, 
+      image: ishaamishra2025
     },
     {
       id: 5,
@@ -83,12 +83,12 @@ function OurAchievement() {
               className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200"
             >
               {/* Image Section */}
-              <div className="flex-shrink-0 w-full sm:w-40 h-56 sm:h-auto">
-                <div className="w-full h-full p-2">
+              <div className="flex-shrink-0 w-full sm:w-48 flex items-center justify-center">
+                <div className="w-full p-2 flex items-center justify-center bg-gray-50">
                   <img
                     src={achievement.image}
                     alt={achievement.name}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="max-w-full max-h-64 w-auto h-auto object-contain rounded-lg"
                   />
                 </div>
               </div>
