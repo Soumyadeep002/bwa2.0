@@ -32,23 +32,24 @@ function WushuTeam() {
         <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">WUSHU TEAM</h2>
         
         {/* Tab Buttons */}
-        <div className="flex justify-center space-x-2 sm:space-x-4 mb-8">
+        <div className="flex justify-center mb-8 gap-4">
           <button
             onClick={() => setActiveTab('sub-junior')}
-            className={`px-3 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base font-semibold ${
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
               activeTab === 'sub-junior'
-                ? 'bg-red-600 text-white'
-                : 'bg-gray-200 text-gray-700'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
             }`}
+            style={activeTab === 'sub-junior' ? { backgroundColor: '#017cc2' } : {}}
           >
             Sub-Junior
           </button>
           <button
             onClick={() => setActiveTab('junior')}
-            className={`px-3 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base font-semibold ${
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
               activeTab === 'junior'
-                ? 'text-white'
-                : 'bg-gray-200 text-gray-700'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
             }`}
             style={activeTab === 'junior' ? { backgroundColor: '#017cc2' } : {}}
           >
@@ -56,10 +57,10 @@ function WushuTeam() {
           </button>
           <button
             onClick={() => setActiveTab('senior')}
-            className={`px-3 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base font-semibold ${
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
               activeTab === 'senior'
-                ? 'text-white'
-                : 'bg-gray-200 text-gray-700'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
             }`}
             style={activeTab === 'senior' ? { backgroundColor: '#017cc2' } : {}}
           >

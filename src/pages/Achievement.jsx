@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
 import apraajeetamishra2025 from '../assets/imgs/achivements/aprajeeta_mishra_2025.jpg'
 import ishaamishra2025 from '../assets/imgs/achivements/isha_misra_2025.jpg'
@@ -8,6 +9,7 @@ import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
 import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
 
 function Achievement() {
+  const [filter, setFilter] = useState('All') // 'All', 'International', 'National'
   // Achievements data organized by year
   const achievementsByYear = [
     {
@@ -110,22 +112,90 @@ function Achievement() {
     return '#017cc2' // Default color for multiple medals
   }
 
+  // Helper function to determine if achievement is International or National
+  const isInternational = (achievement) => {
+    return achievement.category === 'International'
+  }
+
+  // Filter achievements based on selected filter
+  const filterAchievements = (achievements) => {
+    if (filter === 'All') return achievements
+    if (filter === 'International') {
+      return achievements.filter(achievement => isInternational(achievement))
+    }
+    if (filter === 'National') {
+      return achievements.filter(achievement => !isInternational(achievement))
+    }
+    return achievements
+  }
+
+  // Check if there are any achievements after filtering
+  const hasAnyFilteredAchievements = achievementsByYear.some(yearData => 
+    filterAchievements(yearData.achievements).length > 0
+  )
+
   return (
     <div className="py-12 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Achievements</h1>
         
-        <div className="space-y-12">
-          {achievementsByYear.map((yearData) => (
-            <div key={yearData.year}>
-              {/* Year Header */}
-              <div className="text-white px-6 py-4 mb-6 rounded-t-lg" style={{ backgroundColor: '#017cc2' }}>
-                <h2 className="text-2xl font-bold">{yearData.year}</h2>
-              </div>
+        {/* Filter Buttons */}
+        <div className="flex justify-center mb-8 gap-4">
+          <button
+            onClick={() => setFilter('All')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'All'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'All' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setFilter('International')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'International'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'International' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            International
+          </button>
+          <button
+            onClick={() => setFilter('National')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'National'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'National' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            National
+          </button>
+        </div>
+        
+        {!hasAnyFilteredAchievements ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">No achievements found for the selected filter.</p>
+          </div>
+        ) : (
+          <div className="space-y-12">
+            {achievementsByYear.map((yearData) => {
+              const filteredAchievements = filterAchievements(yearData.achievements)
+              if (filteredAchievements.length === 0) return null
               
-              {/* Achievements Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                {yearData.achievements.map((achievement) => (
+              return (
+                <div key={yearData.year}>
+                  {/* Year Header */}
+                  <div className="text-white px-6 py-4 mb-6 rounded-t-lg" style={{ backgroundColor: '#017cc2' }}>
+                    <h2 className="text-2xl font-bold">{yearData.year}</h2>
+                  </div>
+                  
+                  {/* Achievements Cards Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    {filteredAchievements.map((achievement) => (
                   <div
                     key={achievement.id}
                     className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200"
@@ -177,11 +247,13 @@ function Achievement() {
                       </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        )}
       </div>
     </div>
   )

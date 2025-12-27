@@ -38,8 +38,8 @@ function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">CONTACT</h3>
             <ul className="space-y-2 text-sm text-blue-200">
-              <li>Patna, Bihar, India</li>
-              <li>info@biharwushu.in</li>
+              <li>Martial Art Office Harisabha Chowk, Muzaffarpur, Bihar 842001</li>
+              <li>biharwushuassociation@gmail.com</li>
               <li>+91 7462872460</li>
             </ul>
             

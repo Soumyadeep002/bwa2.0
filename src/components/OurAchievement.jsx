@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import apraajeetamishra from '../assets/imgs/achivements/apraajeeta_mishra.png'
 import dikshakumari from '../assets/imgs/achivements/diksha_kumari.png'
 import rahulkumar from '../assets/imgs/achivements/rahul_kumar.png'
@@ -7,6 +8,7 @@ import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
 
 
 function OurAchievement() {
+  const [filter, setFilter] = useState('All') // 'All', 'International', 'National'
   // Placeholder data - images will be provided later
   const achievements = [
     {
@@ -71,13 +73,69 @@ function OurAchievement() {
     </svg>
   )
 
+  // Filter achievements based on selected filter
+  const filterAchievements = (achievements) => {
+    if (filter === 'All') return achievements
+    if (filter === 'International') {
+      return achievements.filter(achievement => achievement.isInternational)
+    }
+    if (filter === 'National') {
+      return achievements.filter(achievement => !achievement.isInternational)
+    }
+    return achievements
+  }
+
+  const filteredAchievements = filterAchievements(achievements)
+
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">OUR ACHIEVEMENT</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {achievements.map((achievement) => (
+        {/* Filter Buttons */}
+        <div className="flex justify-center mb-8 gap-4">
+          <button
+            onClick={() => setFilter('All')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'All'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'All' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setFilter('International')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'International'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'International' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            International
+          </button>
+          <button
+            onClick={() => setFilter('National')}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+              filter === 'National'
+                ? 'text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            }`}
+            style={filter === 'National' ? { backgroundColor: '#017cc2' } : {}}
+          >
+            National
+          </button>
+        </div>
+        
+        {filteredAchievements.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">No achievements found for the selected filter.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {filteredAchievements.map((achievement) => (
             <div
               key={achievement.id}
               className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col sm:flex-row border border-gray-200"
@@ -118,7 +176,8 @@ function OurAchievement() {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   )

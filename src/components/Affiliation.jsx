@@ -10,12 +10,12 @@ import waiLogo from '../assets/imgs/affilation/wai.png'
 
 function Affiliation() {
   const affiliations = [
-    { name: 'SAI', logo: saiLogo },
-    { name: 'Ministry of Youth Affairs & Sports', logo: myasLogo },
-    { name: 'Indian Olympic Association', logo: indOlympicLogo },
-    { name: 'International Wushu Federation', logo: iwfLogo },
+    { name: 'Wushu Association of India', logo: waiLogo },
     { name: 'Bihar Government', logo: biharGovtLogo },
-    { name: 'Wushu Association of India', logo: waiLogo }
+    { name: 'SAI', logo: saiLogo },
+    { name: 'International Wushu Federation', logo: iwfLogo },
+    { name: 'Indian Olympic Association', logo: indOlympicLogo },
+    { name: 'Ministry of Youth Affairs & Sports', logo: myasLogo }
   ]
 
   return (

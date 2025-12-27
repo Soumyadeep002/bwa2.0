@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/imgs/logo.png'
-import saiLogo from '../assets/imgs/sai.png'
-import myasLogo from '../assets/imgs/myas.png'
-import indOlympicLogo from '../assets/imgs/ind-olympic.png'
-import iwfLogo from '../assets/imgs/iwf.png'
 import waiLogo from '../assets/imgs/affilation/wai.png'
+import biharGovtLogo from '../assets/imgs/affilation/bihar-govt.png'
+import saiLogo from '../assets/imgs/affilation/sai.png'
+import iwfLogo from '../assets/imgs/affilation/iwf.png'
+import indOlympicLogo from '../assets/imgs/affilation/ind-olympic.png'
+import myasLogo from '../assets/imgs/affilation/myas.png'
 
 
 function Header() {
@@ -50,6 +51,24 @@ function Header() {
 
             {/* Right Side - Affiliation Logos */}
             <div className="hidden md:flex items-center space-x-4">
+              {/* WAI Logo */}
+              <div className="flex flex-col items-center">
+                <img 
+                  src={waiLogo} 
+                  alt="Wushu Association of India Logo" 
+                  className="w-16 h-16 object-contain rounded"
+                />
+              </div>
+              
+              {/* Bihar Govt Logo */}
+              <div className="flex flex-col items-center">
+                <img 
+                  src={biharGovtLogo} 
+                  alt="Bihar Government Logo" 
+                  className="w-16 h-16 object-contain rounded"
+                />
+              </div>
+              
               {/* SAI Logo */}
               <div className="flex flex-col items-center">
                 <img 
@@ -59,38 +78,29 @@ function Header() {
                 />
               </div>
               
-              {/* Wushu Association of India Logo */}
-              <div className="flex flex-col items-center">
-                <img 
-                  src={waiLogo} 
-                  alt="Wushu Association of India Logo" 
-                  className="w-16 h-16 object-contain rounded"
-                />
-              </div>
-              
-              {/* Ministry Logo */}
-              <div className="flex flex-col items-center">
-                <img 
-                  src={myasLogo} 
-                  alt="MYAS Logo" 
-                  className="w-16 h-16 object-contain rounded"
-                />
-              </div>
-              
-              {/* India Olympic Logo */}
-              <div className="flex flex-col items-center">
-                <img 
-                  src={indOlympicLogo} 
-                  alt="India Olympic Logo" 
-                  className="w-16 h-16 object-contain rounded"
-                />
-              </div>
-              
               {/* IWF Logo */}
               <div className="flex flex-col items-center">
                 <img 
                   src={iwfLogo} 
                   alt="IWF Logo" 
+                  className="w-16 h-16 object-contain rounded"
+                />
+              </div>
+              
+              {/* IOC Logo */}
+              <div className="flex flex-col items-center">
+                <img 
+                  src={indOlympicLogo} 
+                  alt="Indian Olympic Association Logo" 
+                  className="w-16 h-16 object-contain rounded"
+                />
+              </div>
+              
+              {/* MYAS Logo */}
+              <div className="flex flex-col items-center">
+                <img 
+                  src={myasLogo} 
+                  alt="Ministry of Youth Affairs & Sports Logo" 
                   className="w-16 h-16 object-contain rounded"
                 />
               </div>
@@ -172,7 +182,7 @@ function Header() {
               >
                 Anti Doping
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/events"
                 className={({ isActive }) =>
                   `text-sm font-medium pb-1 ${
@@ -181,7 +191,7 @@ function Header() {
                 }
               >
                 Events
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/gallery"
                 className={({ isActive }) =>
@@ -422,7 +432,7 @@ function Header() {
               >
                 Anti Doping
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/events"
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
@@ -445,7 +455,7 @@ function Header() {
                 }}
               >
                 Events
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/gallery"
                 onClick={() => setMobileMenuOpen(false)}
@@ -525,28 +535,33 @@ function Header() {
               <p className="text-xs font-semibold text-gray-500 mb-2 uppercase text-center">Affiliated With</p>
               <div className="flex flex-wrap justify-center gap-2">
                 <img 
-                  src={saiLogo} 
-                  alt="SAI Logo" 
-                  className="w-8 h-8 object-contain"
-                />
-                <img 
                   src={waiLogo} 
                   alt="Wushu Association of India Logo" 
                   className="w-8 h-8 object-contain"
                 />
                 <img 
-                  src={myasLogo} 
-                  alt="MYAS Logo" 
+                  src={biharGovtLogo} 
+                  alt="Bihar Government Logo" 
                   className="w-8 h-8 object-contain"
                 />
                 <img 
-                  src={indOlympicLogo} 
-                  alt="India Olympic Logo" 
+                  src={saiLogo} 
+                  alt="SAI Logo" 
                   className="w-8 h-8 object-contain"
                 />
                 <img 
                   src={iwfLogo} 
                   alt="IWF Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+                <img 
+                  src={indOlympicLogo} 
+                  alt="Indian Olympic Association Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+                <img 
+                  src={myasLogo} 
+                  alt="Ministry of Youth Affairs & Sports Logo" 
                   className="w-8 h-8 object-contain"
                 />
               </div>
