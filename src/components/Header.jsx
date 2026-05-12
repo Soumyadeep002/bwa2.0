@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import logo from '../assets/imgs/logo.png'
 import waiLogo from '../assets/imgs/affilation/wai.png'
 import biharGovtLogo from '../assets/imgs/affilation/bihar-govt.png'
+import boaLogo from '../assets/imgs/affilation/BOA.png'
 import saiLogo from '../assets/imgs/affilation/sai.png'
 import iwfLogo from '../assets/imgs/affilation/iwf.png'
 import indOlympicLogo from '../assets/imgs/affilation/ind-olympic.png'
@@ -65,6 +66,15 @@ function Header() {
                 <img 
                   src={biharGovtLogo} 
                   alt="Bihar Government Logo" 
+                  className="w-16 h-16 object-contain rounded"
+                />
+              </div>
+
+              {/* Bihar Olympic Association */}
+              <div className="flex flex-col items-center">
+                <img
+                  src={boaLogo}
+                  alt="Bihar Olympic Association Logo"
                   className="w-16 h-16 object-contain rounded"
                 />
               </div>
@@ -542,6 +552,11 @@ function Header() {
                 <img 
                   src={biharGovtLogo} 
                   alt="Bihar Government Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+                <img
+                  src={boaLogo}
+                  alt="Bihar Olympic Association Logo"
                   className="w-8 h-8 object-contain"
                 />
                 <img 

@@ -10,11 +10,8 @@ import subJunior2 from '../assets/imgs/team/sub-junior2.jpg'
 import subJunior3 from '../assets/imgs/team/sub-junior3.jpg'
 // Junior team photos
 import junior1 from '../assets/imgs/team/junior.jpg'
-import junior2 from '../assets/imgs/team/junior2.jpg'
 // Senior team photos
 import senior1 from '../assets/imgs/team/senior.jpg'
-import senior2 from '../assets/imgs/team/senior2.jpg'
-import senior3 from '../assets/imgs/team/senior3.jpg'
 
 function WushuTeam() {
   const [activeTab, setActiveTab] = useState('sub-junior')
@@ -22,8 +19,8 @@ function WushuTeam() {
   // Team photos mapping with arrays for each category
   const teamPhotos = {
     'sub-junior': [subJunior1, subJunior2, subJunior3],
-    'junior': [junior1, junior2],
-    'senior': [senior1, senior2, senior3]
+    'junior': [junior1],
+    'senior': [senior1]
   }
 
   return (

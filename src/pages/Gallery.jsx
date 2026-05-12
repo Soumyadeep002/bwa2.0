@@ -8,6 +8,22 @@ import ishamishra from '../assets/imgs/achivements/isha_mishra.png'
 import ishamishra2025 from '../assets/imgs/achivements/isha_misra_2025.jpg'
 import aashihskumars from '../assets/imgs/achivements/aashihs_kumars.png'
 import subhamkumar from '../assets/imgs/achivements/subham_kumar.png'
+import juniorNational24Img1 from '../assets/imgs/achivements/24th Junior National Wushu Championship1.webp'
+import juniorNational24Img2 from '../assets/imgs/achivements/24th Junior National Wushu Championship2.webp'
+import nationalSchoolGames69 from '../assets/imgs/achivements/69th National School Games 2025.webp'
+import federationCup9 from '../assets/imgs/achivements/9th Federation Cup Wushu Championship 2025.webp'
+import banner1 from '../assets/imgs/banner/1.webp'
+import banner2 from '../assets/imgs/banner/2.webp'
+import banner3 from '../assets/imgs/banner/3.webp'
+import banner4 from '../assets/imgs/banner/4.webp'
+import banner5 from '../assets/imgs/banner/5.webp'
+import banner6 from '../assets/imgs/banner/6.webp'
+import newBanner1 from '../assets/imgs/NewBanner/IMGGG1.jpeg'
+import newBanner2 from '../assets/imgs/NewBanner/IMGGG2.jpeg'
+import newBanner3 from '../assets/imgs/NewBanner/IMGGG3.jpeg'
+import newBanner4 from '../assets/imgs/NewBanner/IMGGG4.jpeg'
+import newBanner5 from '../assets/imgs/NewBanner/IMGGG5.jpeg'
+import newBanner6 from '../assets/imgs/NewBanner/IMGGG6.jpg'
 // Event images - National
 import nationalEvent1 from '../assets/imgs/events/national/d8ixeuopdjlhkilridw1.webp'
 import nationalEvent2 from '../assets/imgs/events/national/tkdtmmqfemvqmwlgztnx.webp'
@@ -81,6 +97,30 @@ function Gallery() {
       title: 'Shubham Kumar - Silver Medalist',
       category: 'Achievements',
       image: subhamkumar
+    },
+    {
+      id: 22,
+      title: '24th Junior National Wushu Championship — Hyderabad (1)',
+      category: 'Achievements',
+      image: juniorNational24Img1
+    },
+    {
+      id: 23,
+      title: '24th Junior National Wushu Championship — Hyderabad (2)',
+      category: 'Achievements',
+      image: juniorNational24Img2
+    },
+    {
+      id: 24,
+      title: '69th National School Games 2025 — Srinagar',
+      category: 'Achievements',
+      image: nationalSchoolGames69
+    },
+    {
+      id: 25,
+      title: '9th Federation Cup Wushu Championship 2025 — Rajnandgaon',
+      category: 'Achievements',
+      image: federationCup9
     },
     // Events - National
     {
@@ -164,6 +204,79 @@ function Gallery() {
       title: 'Sub-Junior Team 3',
       category: 'Team',
       image: subJuniorTeamPhoto3
+    },
+    // Home banner slides
+    {
+      id: 26,
+      title: 'Home banner 1',
+      category: 'Banners',
+      image: banner1
+    },
+    {
+      id: 27,
+      title: 'Home banner 2',
+      category: 'Banners',
+      image: banner2
+    },
+    {
+      id: 28,
+      title: 'Home banner 3',
+      category: 'Banners',
+      image: banner3
+    },
+    {
+      id: 29,
+      title: 'Home banner 4',
+      category: 'Banners',
+      image: banner4
+    },
+    {
+      id: 30,
+      title: 'Home banner 5',
+      category: 'Banners',
+      image: banner5
+    },
+    {
+      id: 31,
+      title: 'Home banner 6',
+      category: 'Banners',
+      image: banner6
+    },
+    {
+      id: 32,
+      title: 'Banner — IMGGG1',
+      category: 'Banners',
+      image: newBanner1
+    },
+    {
+      id: 33,
+      title: 'Banner — IMGGG2',
+      category: 'Banners',
+      image: newBanner2
+    },
+    {
+      id: 34,
+      title: 'Banner — IMGGG3',
+      category: 'Banners',
+      image: newBanner3
+    },
+    {
+      id: 35,
+      title: 'Banner — IMGGG4',
+      category: 'Banners',
+      image: newBanner4
+    },
+    {
+      id: 36,
+      title: 'Banner — IMGGG5',
+      category: 'Banners',
+      image: newBanner5
+    },
+    {
+      id: 37,
+      title: 'Banner — IMGGG6',
+      category: 'Banners',
+      image: newBanner6
     }
   ]
 

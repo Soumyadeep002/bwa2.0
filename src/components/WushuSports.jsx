@@ -1,13 +1,11 @@
-import sonshou1 from '../assets/imgs/about/sonshou1.png'
-import sonshou2 from '../assets/imgs/about/sonshou2.png'
-import taolu1 from '../assets/imgs/about/taolu1.png'
-import taolu2 from '../assets/imgs/about/taolu2.png'
+import sanshouImg from '../assets/imgs/about/sonshou2.png'
+import taoluImg from '../assets/imgs/about/taolu2.png'
 
 function WushuSports() {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">WUSHU SPORTS</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">WUSHU</h2>
         
         <section id="about" className=" overflow-hidden">
           <div className="text-justify text-xs md:text-base lg:text-lg flex flex-col gap-8">
@@ -35,17 +33,21 @@ function WushuSports() {
             Wushu is classified into two major Categories Sanshou and Taolu.
           </p>
         </div>
-        <div className="w-full flex flex-col md:flex-row gap-10 md:gap-4 lg:gap-5 my-20">
-          <div className="w-full md:w-1/2 flex flex-col justify-between ">
-            <div className="rounded-lg mb-4 overflow-hidden" data-aos="fade-up" data-aos-easing="ease-in-out">
+        <div className="w-full flex flex-col md:flex-row gap-10 md:gap-4 lg:gap-5 my-20 md:items-start">
+          <div className="w-full md:w-1/2 flex flex-col">
+            <div
+              className="rounded-lg mb-4 overflow-hidden h-52 sm:h-60 md:h-64 lg:h-72 w-full bg-gray-100 shrink-0"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+            >
               <img
-                src={sonshou1}
-                alt="Sanshou"
-                className="w-full h-auto object-cover"
+                src={sanshouImg}
+                alt="Sanshou — free combat"
+                className="w-full h-full object-cover object-center"
               />
             </div>
             <div
-              className="bg-blue-500 px-8 py-3 w-fit text-xl mx-auto text-white rounded-xl font-semibold my-8"
+              className="bg-blue-500 px-8 py-3 w-fit text-xl mx-auto text-white rounded-xl font-semibold mb-6 shrink-0"
               data-aos="fade-right" data-aos-delay="100" data-aos-easing="ease-in-out">
               Sanshou
             </div>
@@ -81,24 +83,21 @@ function WushuSports() {
                 </ul>
               </div>
             </div>
-            <div className="rounded-lg mt-8 overflow-hidden" data-aos="fade-up" data-aos-easing="ease-in-out">
-              <img
-                src={sonshou2}
-                alt="Sanshou"
-                className="w-full h-auto object-cover"
-              />
-            </div>
           </div>
-          <div className="w-full md:w-1/2 flex flex-col justify-between">
-            <div className="rounded-lg mb-4 overflow-hidden" data-aos="fade-up" data-aos-easing="ease-in-out">
+          <div className="w-full md:w-1/2 flex flex-col">
+            <div
+              className="rounded-lg mb-4 overflow-hidden h-52 sm:h-60 md:h-64 lg:h-72 w-full bg-gray-100 shrink-0"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-out"
+            >
               <img
-                src={taolu1}
-                alt="Taolu"
-                className="w-full h-auto object-cover"
+                src={taoluImg}
+                alt="Taolu — Wushu routines"
+                className="w-full h-full object-cover object-center"
               />
             </div>
             <div
-              className="bg-blue-500 px-8 py-3 w-fit text-xl mx-auto text-white rounded-xl font-semibold my-8"
+              className="bg-blue-500 px-8 py-3 w-fit text-xl mx-auto text-white rounded-xl font-semibold mb-6 shrink-0"
               data-aos="fade-left" data-aos-delay="100" data-aos-easing="ease-in-out">
               Taolu
             </div>
@@ -130,13 +129,6 @@ function WushuSports() {
                 <span className="font-semibold">Taolu Competition Events</span><br />
                 Taolu competitions, open to all age groups, feature events for both males and females. Male events include Nanquan, Nandao/Nangun, Changquan, Daoshu/Gunshu, Taijiquan, Taijijian, Jianshu/Qiangshu, and Dual Events. Female events include similar categories with slight variations. Equipment used includes display cards, spring board, arena, broad and straight swords, heavy swords, spears (Qiangshu), and sticks (Gunshu).
               </p>
-            </div>
-            <div className="rounded-lg mt-8 overflow-hidden" data-aos="fade-up" data-aos-easing="ease-in-out">
-              <img
-                src={taolu2}
-                alt="Taolu"
-                className="w-full h-auto object-cover"
-              />
             </div>
           </div>
         </div>

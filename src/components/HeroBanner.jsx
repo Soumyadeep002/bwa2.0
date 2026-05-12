@@ -6,22 +6,17 @@ import 'swiper/css/pagination'
 import banner1 from '../assets/imgs/banner/1.webp'
 import banner2 from '../assets/imgs/banner/2.webp'
 import banner3 from '../assets/imgs/banner/3.webp'
+import banner4 from '../assets/imgs/banner/4.webp'
+import banner5 from '../assets/imgs/banner/5.webp'
+import banner6 from '../assets/imgs/banner/6.webp'
 
 function HeroBanner() {
-  const slides = [
-    {
-      id: 1,
-      image: banner1
-    },
-    {
-      id: 2,
-      image: banner2
-    },
-    {
-      id: 3,
-      image: banner3
-    }
-  ]
+  const slides = [banner1, banner2, banner3, banner4, banner5, banner6].map(
+    (image, index) => ({
+      id: index + 1,
+      image
+    })
+  )
 
   return (
     <div className="relative w-full aspect-video">

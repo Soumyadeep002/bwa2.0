@@ -6,12 +6,14 @@ import myasLogo from '../assets/imgs/affilation/myas.png'
 import indOlympicLogo from '../assets/imgs/affilation/ind-olympic.png'
 import iwfLogo from '../assets/imgs/affilation/iwf.png'
 import biharGovtLogo from '../assets/imgs/affilation/bihar-govt.png'
+import boaLogo from '../assets/imgs/affilation/BOA.png'
 import waiLogo from '../assets/imgs/affilation/wai.png'
 
 function Affiliation() {
   const affiliations = [
     { name: 'Wushu Association of India', logo: waiLogo },
     { name: 'Bihar Government', logo: biharGovtLogo },
+    { name: 'Bihar Olympic Association', logo: boaLogo },
     { name: 'SAI', logo: saiLogo },
     { name: 'International Wushu Federation', logo: iwfLogo },
     { name: 'Indian Olympic Association', logo: indOlympicLogo },
