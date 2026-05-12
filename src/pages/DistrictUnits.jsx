@@ -1,35 +1,28 @@
 function DistrictUnits() {
   const districtUnits = [
-    { id: 1, district: 'Araria', contactPerson: 'Md. Ali', phone: '7004145965', email: 'Aliwushusports@gmail.com', status: 'Active' },
-    { id: 2, district: 'Banka', contactPerson: 'Vibhishan kumar', phone: '9304428917', email: '', status: 'Active' },
-    { id: 3, district: 'Bhagalpur', contactPerson: 'Rajesh kr sah', phone: '9334190914', email: 'Rajeshbwa@gmail.com', status: 'Active' },
-    { id: 4, district: 'Buxar', contactPerson: 'Mukesh Kumar', phone: '9631916001', email: 'associationbuxarwushu@gmail.com', status: 'Active' },
-    { id: 5, district: 'Bhojpur', contactPerson: 'Rajesh Prasad thakur', phone: '9473217593', email: 'bhojpurwushuassociation@gmail.com', status: 'Active' },
-    { id: 6, district: 'Darbhanga', contactPerson: 'Sanjeev Kumar yadav', phone: '6203558395', email: 'darbhangawushuassociationkwa@gmail.com', status: 'Active' },
-    { id: 7, district: 'East Champaran', contactPerson: 'Manjay kumar', phone: '6005871481', email: 'wushuassociationeastchamparan@gmail.com', status: 'Active' },
-    {
-      id: 8,
-      district: 'Gopalganj — District Wushu Association',
-      contactPerson: 'Sonu Sah (District General Secretary)',
-      phone: '9507735233',
-      email: 'gopalganjwushu@gmail.com',
-      status: 'Active'
-    },
-    { id: 9, district: 'Katihar', contactPerson: 'Satish kr', phone: '9431640935', email: 'katiharwushu@gmail.com', status: 'Active' },
-    { id: 10, district: 'Khagaria', contactPerson: 'Chandan Kumar', phone: '9162722420', email: 'khagariawushuassociation@gmail.com', status: 'Active' },
-    { id: 11, district: 'Madhepura', contactPerson: 'Vivek Kumar', phone: '9570588257', email: 'visportsacademy@gmail.com', status: 'Active' },
-    { id: 12, district: 'Madhubani', contactPerson: 'Sunny kumar', phone: '9835820643', email: 'Madhubaniwushu@gmail.com', status: 'Active' },
-    { id: 13, district: 'Muzaffarpur', contactPerson: 'Isha Mishra', phone: '7488099660', email: 'muzwushu@gmail.com', status: 'Active' },
-    { id: 14, district: 'Nalanda', contactPerson: 'Shatrudhan kumar', phone: '6207289083', email: 'nalandasports@gmail.com', status: 'Active' },
-    { id: 15, district: 'Patna', contactPerson: 'Suraj Kumar', phone: '9931918017', email: '', status: 'Active' },
-    { id: 16, district: 'Rohtas', contactPerson: 'Monu Singh', phone: '7970719662', email: '', status: 'Active' },
-    { id: 17, district: 'Saharsa', contactPerson: 'Manish Kumar', phone: '8051518887', email: 'saharsawushu@gmail.com', status: 'Active' },
-    { id: 18, district: 'Samastipur', contactPerson: 'Dileep Kumar', phone: '8709677290', email: 'samastipurwushuassociation@gmail.com', status: 'Active' },
-    { id: 19, district: 'Saran', contactPerson: 'Pandit Vinay devchant', phone: '7352473514', email: '', status: 'Active' },
-    { id: 20, district: 'Sitamarhi', contactPerson: 'Sanjay kumar', phone: '9939282274', email: 'sitamarhiwushu@gmail.com', status: 'Active' },
-    { id: 21, district: 'Siwan', contactPerson: 'Priyanka devi', phone: '9955865901', email: 'siwanwushu@gmail.com', status: 'Active' },
-    { id: 22, district: 'Vaishali', contactPerson: 'Shiv kumar', phone: '7903387848', email: '', status: 'Active' },
-    { id: 23, district: 'West Champaran', contactPerson: 'Alok Kumar', phone: '9973494665', email: 'westchamparanwushuassociation@gmail.com', status: 'Active' },
+    { id: 1, district: 'Araria', contactPerson: 'Md. Ali', phone: '7004145965', email: 'Aliwushusports@gmail.com' },
+    { id: 2, district: 'Banka', contactPerson: 'Vibhishan kumar', phone: '9304428917', email: '' },
+    { id: 3, district: 'Bhagalpur', contactPerson: 'Rajesh kr sah', phone: '9334190914', email: 'Rajeshbwa@gmail.com' },
+    { id: 4, district: 'Buxar', contactPerson: 'Mukesh Kumar', phone: '9631916001', email: 'associationbuxarwushu@gmail.com' },
+    { id: 5, district: 'Bhojpur', contactPerson: 'Rajesh Prasad thakur', phone: '9473217593', email: 'bhojpurwushuassociation@gmail.com' },
+    { id: 6, district: 'Darbhanga', contactPerson: 'Sanjeev Kumar yadav', phone: '6203558395', email: 'darbhangawushuassociationkwa@gmail.com' },
+    { id: 7, district: 'East Champaran', contactPerson: 'Manjay kumar', phone: '6005871481', email: 'wushuassociationeastchamparan@gmail.com' },
+    { id: 8, district: 'Gopalganj', contactPerson: 'Sonu Sah', phone: '9507735233', email: 'gopalganjwushu@gmail.com'},
+    { id: 9, district: 'Katihar', contactPerson: 'Satish kr', phone: '9431640935', email: 'katiharwushu@gmail.com' },
+    { id: 10, district: 'Khagaria', contactPerson: 'Chandan Kumar', phone: '9162722420', email: 'khagariawushuassociation@gmail.com' },
+    { id: 11, district: 'Madhepura', contactPerson: 'Vivek Kumar', phone: '9570588257', email: 'visportsacademy@gmail.com' },
+    { id: 12, district: 'Madhubani', contactPerson: 'Sunny kumar', phone: '9835820643', email: 'Madhubaniwushu@gmail.com' },
+    { id: 13, district: 'Muzaffarpur', contactPerson: 'Isha Mishra', phone: '7488099660', email: 'muzwushu@gmail.com' },
+    { id: 14, district: 'Nalanda', contactPerson: 'Shatrudhan kumar', phone: '6207289083', email: 'nalandasports@gmail.com' },
+    { id: 15, district: 'Patna', contactPerson: 'Suraj Kumar', phone: '9931918017', email: '' },
+    { id: 16, district: 'Rohtas', contactPerson: 'Monu Singh', phone: '7970719662', email: '' },
+    { id: 17, district: 'Saharsa', contactPerson: 'Manish Kumar', phone: '8051518887', email: 'saharsawushu@gmail.com' },
+    { id: 18, district: 'Samastipur', contactPerson: 'Dileep Kumar', phone: '8709677290', email: 'samastipurwushuassociation@gmail.com' },
+    { id: 19, district: 'Saran', contactPerson: 'Pandit Vinay devchant', phone: '7352473514', email: '' },
+    { id: 20, district: 'Sitamarhi', contactPerson: 'Sanjay kumar', phone: '9939282274', email: 'sitamarhiwushu@gmail.com' },
+    { id: 21, district: 'Siwan', contactPerson: 'Priyanka devi', phone: '9955865901', email: 'siwanwushu@gmail.com' },
+    { id: 22, district: 'Vaishali', contactPerson: 'Shiv kumar', phone: '7903387848', email: '' },
+    { id: 23, district: 'West Champaran', contactPerson: 'Alok Kumar', phone: '9973494665', email: 'westchamparanwushuassociation@gmail.com' },
   ]
 
   return (
@@ -47,7 +40,6 @@ function DistrictUnits() {
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Contact Person</th>
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Phone</th>
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -69,15 +61,6 @@ function DistrictUnits() {
                           {unit.email}
                         </a>
                       ) : '-'}
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                        unit.status === 'Active' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-red-100 text-red-800'
-                      }`}>
-                        {unit.status}
-                      </span>
                     </td>
                   </tr>
                 ))}
