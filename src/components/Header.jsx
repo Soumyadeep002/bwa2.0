@@ -43,9 +43,9 @@ function Header() {
               </div>
               {/* Association Name */}
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold" style={{ color: '#017cc2' }}>
+                <p className="text-2xl md:text-3xl font-bold" style={{ color: '#017cc2' }}>
                   BIHAR WUSHU ASSOCIATION
-                </h1>
+                </p>
                 <p className="text-xs text-gray-600">Official State Association</p>
               </div>
             </div>
@@ -135,8 +135,8 @@ function Header() {
               >
                 Home
               </NavLink>
-              <div 
-                className="relative"
+              <div
+                className="relative flex items-center self-stretch"
                 onMouseEnter={() => setAboutDropdownOpen(true)}
                 onMouseLeave={() => setAboutDropdownOpen(false)}
               >
@@ -154,21 +154,23 @@ function Header() {
                   </svg>
                 </NavLink>
                 {aboutDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg z-40">
-                    <NavLink
-                      to="/district-units"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-opacity-10"
-                      onClick={() => setAboutDropdownOpen(false)}
-                    >
-                      District Units
-                    </NavLink>
-                    <NavLink
-                      to="/members"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-opacity-10"
-                      onClick={() => setAboutDropdownOpen(false)}
-                    >
-                      Committee Members
-                    </NavLink>
+                  <div className="absolute left-0 top-full z-40 w-48 pt-2">
+                    <div className="overflow-hidden rounded-md bg-white shadow-lg">
+                      <NavLink
+                        to="/district-units"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-opacity-10"
+                        onClick={() => setAboutDropdownOpen(false)}
+                      >
+                        District Units
+                      </NavLink>
+                      <NavLink
+                        to="/members"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-opacity-10"
+                        onClick={() => setAboutDropdownOpen(false)}
+                      >
+                        Committee Members
+                      </NavLink>
+                    </div>
                   </div>
                 )}
               </div>

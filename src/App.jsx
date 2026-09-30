@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import RouteSeo from './components/RouteSeo'
 import Home from './pages/Home'
 import About from './pages/About'
 import DistrictUnits from './pages/DistrictUnits'
@@ -17,6 +18,7 @@ import ScrollToTop from './components/ScrollToTop'
 function App() {
   return (
     <BrowserRouter>
+      <RouteSeo />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>

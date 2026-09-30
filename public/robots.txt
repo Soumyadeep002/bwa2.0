@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/
+
+# After you set VITE_SITE_URL and rebuild, dist will include sitemap.xml — add this line with your real origin:
+# Sitemap: https://your-domain.com/sitemap.xml
